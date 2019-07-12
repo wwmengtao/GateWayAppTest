@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:paddingTop="80dp"
+              android:paddingLeft="10dp"
+              android:paddingRight="10dp">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="输入身高（厘米）：" />
+
+        <EditText
+                android:id="@+id/registerHeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:inputType="number" >
+        </EditText>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="输入体重（公斤）：" />
+
+        <EditText
+                android:id="@+id/registerWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:inputType="number" >
+        </EditText>
+
+        <Button
+                android:id="@+id/registerComplete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="完成" />
+
+</LinearLayout>

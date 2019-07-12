@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:title="设置"  >
+    <PreferenceCategory android:layout="@layout/preference_category_widget" android:title="老人" >
+        <EditTextPreference android:layout="@layout/preference_item"
+                android:key="setting_height"
+                android:summary="厘米"
+                android:inputType="number" />
+        <EditTextPreference android:layout="@layout/preference_item"
+                android:key="setting_weight"
+                android:summary="公斤"
+                android:inputType="number" />
+    </PreferenceCategory>
+    <PreferenceCategory android:layout="@layout/preference_category_widget" android:title="手环" >
+        <EditTextPreference android:layout="@layout/preference_item"
+                            android:key="setting_hrFast"
+                            android:summary="次数"
+                            android:inputType="number" />
+        <EditTextPreference android:layout="@layout/preference_item"
+                            android:key="setting_hrSlow"
+                            android:summary="次数"
+                            android:inputType="number" />
+        <ListPreference android:layout="@layout/preference_item"
+                android:key="setting_monitorInterval"
+                android:dialogTitle="采集间隔"
+                android:entries="@array/monitor_interval_name"
+                android:entryValues="@array/monitor_interval_value"
+                android:summary="分钟" />
+        <Preference android:layout="@layout/preference_item"
+                    android:key="setting_wearable_version"
+                    android:summary="点击检查固件更新"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:layout="@layout/preference_category_widget" android:title="手机" >
+        <Preference android:layout="@layout/preference_item"
+                    android:key="setting_token"
+                    android:summary="点击生成亲情码"/>
+        <Preference android:layout="@layout/preference_item"
+                    android:key="setting_app_version"
+                    android:summary="点击检查更新"/>
+    </PreferenceCategory>
+</PreferenceScreen>

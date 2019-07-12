@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.homecare.app"
+    android:versionCode="1"
+    android:versionName="1.0.30">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/homecare"
+        android:name=".HomeCareApp"
+        android:label="Kiwi"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".HomeCareActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.homecare.app.LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.homecare.app.RegisterActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.homecare.app.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".widget.settings.SettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="no.nordicsemi.android.nrftoolbox.dfu.NotificationActivity" android:label="@string/dfu_feature_title" />
+        <activity android:name="no.nordicsemi.android.dfu.DfuActivity" android:screenOrientation="portrait"/>
+        <activity android:name="no.nordicsemi.android.nrftoolbox.dfu.DfuActivity" android:screenOrientation="portrait"/>
+        <service android:name="com.homecare.app.ble.uart.UARTService" android:enabled="true"/>
+        <service android:name="com.homecare.app.service.BatteryService" android:enabled="true"/>
+        <service android:name="com.homecare.app.service.ConnectionService" android:enabled="true"/>
+        <service android:name="com.homecare.app.service.GpsService" android:enabled="true"/>
+        <service android:name="no.nordicsemi.android.nrftoolbox.dfu.DfuService"
+                 android:exported="true">
+            <intent-filter>
+                <action android:name="no.nordicsemi.android.action.DFU_UPLOAD" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <meta-data
+            android:name="PUSH_APPID"
+            android:value="VDwPay2CIw5tRqAJAWBd2A" />
+        <meta-data
+            android:name="PUSH_APPKEY"
+            android:value="ik1ZHkgV538qx4EDR3mZO" />
+        <meta-data
+            android:name="PUSH_APPSECRET"
+            android:value="o5r73aQFtv8opCZut4N3Q7" />
+        <receiver
+            android:name=".receiver.GatewayPushReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <!-- 替换为action android:name="com.igexin.sdk.action.第三方应用APPID" -->
+                <action android:name="com.igexin.sdk.action.VDwPay2CIw5tRqAJAWBd2A" />
+            </intent-filter>
+        </receiver>
+        <!-- 配置SDK核心服务 -->
+        <service
+            android:name="com.igexin.sdk.PushService"
+            android:exported="true"
+            android:label="NotificationCenter"
+            android:process=":pushservice" >
+        </service>
+        <service
+            android:name="com.igexin.sdk.PushServiceUser"
+            android:exported="true"
+            android:label="NotificationCenterUser" >
+        </service>
+        <receiver android:name="com.igexin.sdk.PushReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="com.igexin.sdk.action.refreshls" />
+                <!-- 以下三项为可选的action声明，可大大提高service存活率和消息到达速度 -->
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.igexin.sdk.PushManagerReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.igexin.sdk.action.pushmanager" />
+            </intent-filter>
+        </receiver>
+        <activity
+            android:name="com.igexin.sdk.PushActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:process=":pushservice"
+            android:taskAffinity="com.igexin.sdk.PushActivityTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+
+        <service
+            android:name="com.igexin.download.DownloadService"
+            android:process=":pushservice" />
+
+        <receiver android:name="com.igexin.download.DownloadReceiver" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="com.igexin.download.DownloadProvider"
+            android:exported="true"
+            android:authorities="downloads.com.homecare.app"
+            android:process=":pushservice" />
+
+        <activity
+            android:name="com.igexin.getuiext.activity.GetuiExtActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:process=":pushservice"
+            android:taskAffinity="android.task.myServicetask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <receiver
+            android:name="com.igexin.getuiext.service.PayloadReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.igexin.sdk.action.7fjUl2Z3LH6xYy7NQK4ni4" />
+                <action android:name="com.igexin.sdk.action.VDwPay2CIw5tRqAJAWBd2A" />
+            </intent-filter>
+        </receiver>
+        <service
+            android:name="com.igexin.getuiext.service.GetuiExtService"
+            android:process=":pushservice" />
+    </application>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- Declare this required feature if you want to make the app available to BLE-capable
+        devices only.  If you want to make your app available to devices that don't support BLE,
+        you should omit this in the manifest.  Instead, determine BLE capability by using
+        PackageManager.hasSystemFeature(FEATURE_BLUETOOTH_LE) -->
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="getui.permission.GetuiService.com.homecare.app"/>
+    <permission android:name="getui.permission.GetuiService.com.homecare.app" android:protectionLevel="normal"/>
+
+</manifest>

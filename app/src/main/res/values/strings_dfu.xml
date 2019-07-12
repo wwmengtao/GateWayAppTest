@@ -1,0 +1,55 @@
+<resources>
+
+    <string name="dfu_unknown_name">unnamed device</string>
+    <string name="dfu_action_abort">Abort</string>
+    <string name="dfu_status_connecting">连接中&#8230;</string>
+    <string name="dfu_status_starting">开始升级&#8230;</string>
+    <string name="dfu_status_switching_to_dfu">Starting bootloader&#8230;</string>
+    <string name="dfu_status_uploading">上传中&#8230;</string>
+    <string name="dfu_status_uploading_part" formatted="false">Uploading part %d/%d&#8230;</string>
+    <string name="dfu_status_validating">Validating&#8230;</string>
+    <string name="dfu_status_disconnecting">Disconnecting&#8230;</string>
+    <string name="dfu_status_completed">Done</string>
+    <string name="dfu_status_aborted">Aborted</string>
+    <string name="dfu_status_aborting">取消中&#8230;</string>
+    <string name="dfu_status_error">Upload failed</string>
+    <string name="dfu_status_connecting_msg">Connecting to %s&#8230;</string>
+    <string name="dfu_status_starting_msg">初始化&#8230;</string>
+    <string name="dfu_status_switching_to_dfu_msg">Waiting for bootloader&#8230;</string>
+    <string name="dfu_status_uploading_components_msg">Transmitting components to %s&#8230;</string>
+    <string name="dfu_status_uploading_msg">Transmitting application to %s&#8230;</string>
+    <string name="dfu_status_validating_msg">Validating&#8230;</string>
+    <string name="dfu_status_completed_msg">Application has been send successfully.</string>
+    <string name="dfu_status_aborted_msg">Application upload has been canceled.</string>
+    <string name="dfu_status_disconnecting_msg">Disconnecting from %s&#8230;</string>
+    <string name="dfu_status_error_msg">固件升级失败！</string>
+    <string name="dfu_confirmation_dialog_title">上传固件</string>
+    <string name="dfu_upload_dialog_cancel_message">确定要取消上传吗？</string>
+    <string name="dfu_file_status_ok">OK</string>
+    <string name="dfu_file_status_ok_with_init">OK (Init file selected)</string>
+    <string-array name="dfu_file_type">
+        <item>Distribution packet (ZIP)</item>
+        <item>Soft Device</item>
+        <item>Bootloader</item>
+        <item>Application</item>
+    </string-array>
+    <string name="dfu_file_size_text">%d 字节</string>
+    <string name="dfu_file_status_invalid">Invalid file</string>
+    <string name="dfu_file_status_invalid_message">Please, select valid HEX file</string>
+    <string name="dfu_action_upload_cancel">取消</string>
+    <string name="dfu_success">固件升级成功！</string>
+    <string name="dfu_aborted">Uploading of the application has been canceled.</string>
+    <string name="dfu_action_upload">上传</string>
+    <string name="dfu_default_name">DEFAULT DFU</string>
+    <string name="dfu_file_status_no_file">File not loaded</string>
+    <dimen name="dfu_feature_title_long_margin">-186dp</dimen>
+    <string name="dfu_section_application_header">固件文件</string>
+    <string name="dfu_file_name_label">名字：</string>
+    <string name="dfu_file_type_label">类型：</string>
+    <string name="dfu_file_size_label">大小：</string>
+    <string name="dfu_file_status_label">状态：</string>
+    <string name="dfu_section_dfu_header">升级状态</string>
+    <string name="dfu_uploading_percentage_label">0%</string>
+    <string name="dfu_feature_title">固件升级</string>
+
+</resources>

@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">老人端App</string>
+    <string name="scanner_subtitle_bonded">已绑定的手环：</string>
+    <string name="scanner_subtitle_not_bonded">未绑定的手环：</string>
+    <string name="not_available">N/A</string>
+    <string name="scanner_empty">未发现</string>
+    <string name="scanner_title">选择手环：</string>
+    <string name="scanner_action_scan">扫描</string>
+    <string name="scanner_action_cancel">停止扫描</string>
+    <string name="settings">设置</string>
+    <string name="connect_ok">正常</string>
+    <string name="connect_fail">断开</string>
+    <string name="connect_none">未连接</string>
+    <string name="unknown">未知</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="progress">%d%%</string>
+    <string name="no_ble">Device doesn\'t have BLE support!</string>
+    <string name="font_path">fonts/trebucbd.ttf</string>
+    <string name="normal_font_path">fonts/trebuc.ttf</string>
+    <string name="waiting">请等待</string>
+    <string name="empty_wearable_view">未检测</string>
+
+    <string-array name="monitor_interval_name">
+        <item>5分钟</item>
+        <item>10分钟</item>
+        <item>20分钟</item>
+        <item>30分钟</item>
+        <item>40分钟</item>
+    </string-array>
+    <string-array name="monitor_interval_value">
+        <item>5</item>
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+    </string-array>
+</resources>
